@@ -1,0 +1,164 @@
+/* TApp.rsrc.r
+*
+* rez source for TApp resources
+*
+* © 1990 Dan Weston All rights reserved
+*
+* Build it with the following rez command
+*
+* rez TApp.rsrc.r -o TApp.rsrc -t rsrc -c RSED 
+*
+*/
+
+#include "types.r"
+
+resource 'ALRT' (128 I purgeable) {
+  {68, 76, 172, 376},
+  128,
+  {
+    /* array: 4 elements */ 
+    /* [1] */
+    OK, visible, silent,
+    /* [2] */
+    OK, visible, silent, 
+    /* [3] */
+    OK, visible, silent, 
+    /* [4J */
+    OK, visible, silent
+  }
+};
+
+
+resource 'DITL' (128, purgeable) {
+  {
+    /* array DITLarray: 5 elements */
+    /* [ll */
+    {65, 199, 85, 279} I
+    Button {
+      enabled,
+      "OK"
+    },
+    /* [2] */
+    (8, 8, 24, 304},
+    StaticText {
+      disabled,
+      "Generic Application"
+    },
+    /* [3] */
+    {44, 199, 59, 245},
+    StaticText {
+      disabled,
+      "" 
+    },
+    /* [4] */ 
+    {42, 34, 58, 162},
+    StaticText {
+      disabled,
+      "version number ??"
+    },
+    /* [5] */
+    {65, 34, 89, 165},
+    StaticText {
+      disabled,
+      "Date completed"
+    }
+  }
+};
+
+resource 'MENU' (128, preload) {
+  128,
+
+  textMenuProc, Ox7FFFFFFD, enabled, apple,
+  { /* array: 2 elements */
+    /* [1] */
+    "About Generic", no!con, noKey, noMark, plain,
+    /* [2] */
+    "-", no!con, noKey, noMark, plain
+};
+
+resource 'MENU' (129, preload) {
+  129,
+  textMenuProc, Ox7FFFFDBB, enabled, "File",
+  {
+    /* array: 11 elements */
+    /* [l) */
+    "New", no!con, "N", noMark, plain,
+    /* [2) */
+    "Open", no!con, "O", noMark, plain,
+    /* [3J */
+    "-", no!con, noKey, noMark, plain,
+    /* [4) */
+    "Close", no!con, "W", noMark, plain,
+    /* [5) */
+    "Save", noicon, "S", noMark, plain,
+    /* [6) */
+    "Save as ... ", no!con, noKey, noMark, plain,
+    /* [7] */
+    "-", no!con, noKey, noMark, plain,
+    /* [8) */
+    "Page Setup", noicon, noKey, noMark, plain,
+    /* [9] */
+    "Print", noicon, "P", noMark, plain,
+    /* [10) */
+    "-", noicon, noKey, noMark, plain,
+    /* [11) */
+    "Quit", noicon, "Q", noMark, plain
+  }
+};
+
+resource 'MENU' (130, preload) {
+  130,
+  textMenuProc, OxBD,
+  enabled, "Edit",
+  {
+    /* array: 8 elements */
+    /* [lJ */
+    "Undo", noicon, "Z", noMark, plain,
+    /* [2) */
+    "-", noicon, noKey, noMark, plain,
+    /* [3J */
+    "Cut", noicon, "X", noMark, plain,
+    /* [4J */
+    "Copy", noicon, "C", noMark, plain,
+    /* [5) */
+    "Paste", noicon, "V", noMark, plain,
+    /* [6) */
+    "Clear", noicon, noKey, noMark, plain,
+    /* [7) */
+    "-", noicon, noKey, noMark, plain,
+    /* [8] */
+    "Select A ll", noicon, "A", noMark, plain
+  }
+};
+
+resource 'MBAR' (128, preload) {
+  {
+    /* array MenuArray: 3 elements */ /* [1] */
+    128,
+    /* [2] */
+    129,
+    /* [3] */
+    130
+  }
+};
+
+resource 'SIZE' (-1) {
+  dontSaveScreen,
+  acceptSuspendResumeEvents,
+  enableOptionSwitch,
+  canBackground,
+  multiFinderAware,
+  backgroundAndForeground,
+  dontGetFrontClicks,
+  ignoreChildDiedEvents,
+  is32BitCompatible,
+  reserved,
+  reserved,
+  reserved,
+  reserved,
+  reserved,
+  reserved,
+  reserved,
+  384000,
+  384000
+};
