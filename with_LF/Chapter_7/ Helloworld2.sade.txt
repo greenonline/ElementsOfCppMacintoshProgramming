@@ -1,0 +1,8 @@
+directory 'hd:mpw:C++:helloworld2:'
+
+sourcepath '::App/Doc:', ∂
+           '::helloworld2: '
+
+target 'helloworld2'
+
+open source ('helloworld2.cp')
