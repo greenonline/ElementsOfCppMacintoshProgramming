@@ -1,0 +1,9 @@
+directory 'hd:mpw:C++: PictView:'
+
+sourcepath '::App/Doc:',∂
+           '::TScrollDoc:',∂
+           ':: PictView:'
+
+target "PictView"    # assume symbol file is 'application name.SYM'
+
+open source ('PictView.cp')
