@@ -1,0 +1,9 @@
+directory 'hd:mpw:C++:ModelessApp:'
+
+sourcepath '::App/Doc:',∂
+           '::ModelessDoc:',∂
+           '::ModelessApp:'
+
+target 'ModelessApp' # assumes symbol file is 'application name.SYM' 
+
+open source ('ModelessApp.cp')
