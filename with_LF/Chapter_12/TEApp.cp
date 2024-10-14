@@ -1,0 +1,79 @@
+///////////////////////////////////////////////////////////////////
+//
+// This file: TEApp.cp
+//
+// This is the main application object for the simplest 
+// application program using TTEDoc
+//
+//© 1990 Dan Weston, All Rights Reserved
+// 
+///////////////////////////////////////////////////////////////////
+
+#include "TApp.h" 
+#include "TDoc.h" 
+#include "TTEDoc.h"
+
+///////////////////////////////////////////////////////////////////
+//
+// class declarations
+// 
+///////////////////////////////////////////////////////////////////
+class TTEApp : public TApp{
+  protected:
+
+    virtual TDoc * MakeDoc(SFReply *reply = (SFReply *) nil); 
+    virtual int GetNumFileTypes(void) {return l;};
+    virtual SFTypeList GetFileTypesList(void);
+    virtual Boolean CanOpen(void) {return true;}
+    virtual OSType CanAcceptClipType(void) {return 'TEXT';}
+};
+
+///////////////////////////////////////////////////////////////////
+//
+// Globals
+// 
+///////////////////////////////////////////////////////////////////
+
+SFTypeList gtheTypes = {'TEXT'};
+
+///////////////////////////////////////////////////////////////////
+//
+// main
+// 
+///////////////////////////////////////////////////////////////////
+void main(void)
+{
+  // create an instance of TTEApp 
+  TTEApp theApp;
+
+  // initialize the application
+  if(theApp.InitApp()){
+    // open one window to start with,
+    // unless we got files from the Finder 
+    if(! theApp.OpenDocFromFinder())
+      theApp.OpenNewDoc();
+
+    // run the event loop until user quits 
+    theApp.EventLoop();
+
+    //now clean up 
+    theApp.CleanUp();
+  }
+}
+
+///////////////////////////////////////////////////////////////////
+//
+// TTEApp::MakeDoc
+// 
+///////////////////////////////////////////////////////////////////
+TDoc * TTEApp::MakeDoc(SFReply *reply) {
+  return new TTEDoc(GetCreator(), reply);
+}
+///////////////////////////////////////////////////////////////////
+//
+// TTEApp::GetFileTypesList
+// 
+///////////////////////////////////////////////////////////////////
+SFTypeList TTEApp::GetFileTypesList(void) {
+  return gtheTypes;
+}

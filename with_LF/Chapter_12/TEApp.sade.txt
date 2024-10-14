@@ -1,0 +1,10 @@
+directory 'hd:mpw:C++:TEApp:'
+
+sourcepath '::App-Doc:',∂
+           '::TEDoc:', ∂
+           '::TScrollDoc:',∂
+           '::TEApp:'
+
+target 'TEApp'
+
+open source ('TEApp.cp')
