@@ -18,15 +18,16 @@ int main (void) {
   char nextc;
 
   while (cin.get(c)){
-    if (c != 'I'l{
-      // most chars just pass right through filter cout << c;
-    else {
+    if (c != '/'){
+      // most chars just pass right through filter
+      cout << c;
+    } else {
       // this may be a double-slash comment... 
       // check next char following first '/' 
       cin.get(nextc);
       if (nextc != 'I') {
         // not a double-slash comment,
-        // just output the 'I' and the following char 
+        // just output the '/' and the following char 
         cout << c << nextc;
 
       } else {
@@ -48,5 +49,5 @@ int main (void) {
   } // end while
   // make sure a// output is flushed 
   cout << flush;
-  return O;
+  return 0;
 }
