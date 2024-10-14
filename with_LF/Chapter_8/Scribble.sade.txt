@@ -1,0 +1,8 @@
+directory 'hd:mpw:C++:Scribble:'
+
+sourcepath '::App/Doc:', ∂
+           '::Scribble:'
+
+target "Scribble" # assumes symbol file is 'application name.SYM' 
+
+open source ('Scribble.cp')
