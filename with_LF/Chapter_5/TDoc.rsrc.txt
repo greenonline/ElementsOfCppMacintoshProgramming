@@ -1,0 +1,114 @@
+/* TDoc.rsrc.r
+*
+* rez source for TDoc resources
+*
+* © 1990 Dan Weston All rights reserved
+*
+* Build it with the following rez command
+*
+* rez TDoc.rsrc.r -o TDoc.rsrc -t rsrc -c RSED
+*
+*/
+
+#include "types.r"
+
+resource 'WIND' (1000) {
+  {40, 40, 182, 304},
+  zoomDocProc,
+  invisible,
+  goAway,
+  0x0,
+  Untitled
+};
+
+resource 'ALRT' (500, "phSaveChanges", purgeable) {
+  (100, 110, 220, 402},
+  500,
+  {
+    /* array: 4 elements */
+    /* [1] */
+    OK, visible, silent,
+    /* [2] */
+    OK, visible, silent,
+    /* [3] */
+    OK, visible, silent,
+    /* [4] */
+    OK, visible, silent
+  }
+};
+
+resource 'ALRT' (255, "ErrorAlert", purgeable){
+  {100, 110, 220, 402},
+  255,
+  {
+    /* array: 4 elements */
+    /* [1] */
+    OK, visible, silent,
+    /* [2] */
+    OK, visible, silent,
+    /* [3] */
+    OK, visible, silent,
+    /* [4] */
+    OK, visible, silent
+  }
+};
+
+resource 'DITL' (500, "phSaveChanges", purgeable) {
+  {
+    /* array DITLarray: 4 elements */
+    /* [l] */
+    {58, 25, 76, 99),
+    Button {
+      enabled,
+      "Yes"
+    },
+    /* [2] */
+    {86, 195, 104, 269},
+    Button {
+      enabled,
+      "Cancel"
+    },
+    /* [3] */
+    {86, 25, 104, 99},
+    Button {
+       enabled,
+      "No"
+    },
+    /* [4] */
+    {12, 20, 53, 279},
+    StaticText {
+      disabled,
+      "Save changes to "^O" before closing?"
+    }
+  }
+};
+
+resource 'DITL' (255, "phSaveChanges", purgeable) {
+  {
+    /* array DITLarray: 2 elements */
+    /* [1] */
+    {85, 199, 105, 259),
+    Button {
+      enabled,
+      "OK"
+    },
+    /* [2] */
+    {11, 96, 76, 284),
+    StaticText {
+      disabled,
+      "^0"
+    }
+  }
+};
+
+resource 'STR#' (255) {
+  {
+    /* array StringArray: 3 elements */
+    /* [l] */
+    "Not enough memory to complete this opera" "tion.",
+    /* [2] */
+    "That file is already open.",
+    /* [3] */
+    "Unknown error."
+  }
+};
