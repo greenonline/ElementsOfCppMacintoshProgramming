@@ -1,0 +1,10 @@
+directory 'hd:mpw:C++:DebugTEApp:'
+
+sourcepath '::App/Doc:',∂ 
+           '::TEDoc:',∂
+           '::DebugDoc:' ∂
+           '::DebugTEApp:'
+
+target 'DebugTEApp'
+
+open source ('DebugTEApp.cp')
